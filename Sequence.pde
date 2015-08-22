@@ -146,7 +146,7 @@ class Sequence {
       if (frames[i] == null) break;
       i--;
     }
-    if (i <= 0) return false;
+    if (i < 0) return false;
 
     while (i < index) {
       frames[i] = frames[i + 1];
@@ -165,7 +165,7 @@ class Sequence {
       if (frames[i] == null) break;
       i++;
     }
-    if (i >= maxFrames - 1) return false;
+    if (i > maxFrames - 1) return false;
 
     while (i > index) {
       frames[i] = frames[i - 1];
