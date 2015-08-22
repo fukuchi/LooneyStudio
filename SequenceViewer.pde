@@ -184,5 +184,9 @@ class SequenceViewer {
     boolean ret = sequence.shiftRight(frameShiftBase);
     if (ret) frameShiftBase++;
   }
+
+  void shiftCameraPosition(int d) {
+    sequence.shiftCameraPosition(d);
+  }
 }
 

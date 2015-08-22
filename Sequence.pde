@@ -136,6 +136,14 @@ class Sequence {
     currentCameraPosition = number;
   }
 
+  void shiftCameraPosition(int d) {
+    int number = currentCameraPosition + d;
+    if (number < 0) number = 0;
+    if (number >= maxFrames) number = maxFrames - 1;
+
+    setCameraPosition(number);
+  }
+
   void setNewImageFrame(int number) {
     frames[number] = new ImageFrame(number, path);
   }

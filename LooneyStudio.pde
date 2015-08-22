@@ -86,11 +86,16 @@ void keyPressed() {
     if (keyCode == LEFT) {
       if (sequenceViewer.frameShifting) {
         sequenceViewer.shiftLeft();
+      } else {
+        sequenceViewer.shiftCameraPosition(-1);
       }
     } else if (keyCode == RIGHT) {
       if (sequenceViewer.frameShifting) {
         sequenceViewer.shiftRight();
+      } else {
+        sequenceViewer.shiftCameraPosition(1);
       }
     }
   }
 }
+
