@@ -90,7 +90,7 @@ class SequenceViewer {
     rect(ox, oy, 60, 45);
 
     fill(128);
-    String nstr = String.format("%2d", n);
+    String nstr = String.format("%2d", n + 1);
     text(nstr, ox, oy + 45);
   }
 
@@ -189,4 +189,3 @@ class SequenceViewer {
     sequence.shiftCameraPosition(d);
   }
 }
-
