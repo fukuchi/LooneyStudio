@@ -44,9 +44,11 @@ class Sequence {
   }
 
   void startPlay() {
-    for (int i=currentCameraPosition; i<maxFrames; i++) {
-      if (frames[i] != null) {
-        currentPlayerPosition = i;
+    println("mogemoge");
+    for (int i=0; i<maxFrames; i++) {
+      int j = (i + currentPlayerPosition) % maxFrames;
+      if (frames[j] != null) {
+        currentPlayerPosition = j;
         break;
       }
     }
@@ -186,4 +188,3 @@ class Sequence {
     return true;
   }
 }
-
