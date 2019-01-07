@@ -44,7 +44,6 @@ class Sequence {
   }
 
   void startPlay() {
-    println("mogemoge");
     for (int i=0; i<maxFrames; i++) {
       int j = (i + currentPlayerPosition) % maxFrames;
       if (frames[j] != null) {

@@ -12,7 +12,9 @@ class ControlPanel {
   final static int _SHOWPREV = 4;
   final static int _TRASH = 5;
   final static int _PROTECT = 6;
-  final static int _ICONLAST = 7;
+  final static int _NULL = 7;
+  final static int _OPEN = 8;
+  final static int _ICONLAST = 9;
 
   ControlPanel() {
     panel = loadImage("controlpanel.png");
@@ -105,6 +107,11 @@ class ControlPanel {
         sequence.toggleProtection();
       }
       break;
+    case _OPEN:
+      forceStop();
+      lockPanel();
+      selectFolder("Select or create a project folder:", "folderSelected2");
+      break;
     }
 
     return true;
@@ -123,4 +130,3 @@ class ControlPanel {
     locked = false;
   }
 }
-

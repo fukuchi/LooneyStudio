@@ -64,4 +64,3 @@ class ImageFrame {
     oldfile.renameTo(newfile);
   }
 }
-

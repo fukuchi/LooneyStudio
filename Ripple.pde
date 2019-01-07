@@ -40,4 +40,3 @@ class Ripple {
     d += (float)t * 0.6;
   }
 }
-

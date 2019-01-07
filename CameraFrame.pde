@@ -61,4 +61,3 @@ class CameraFrame {
     prev = img;
   }
 }
-

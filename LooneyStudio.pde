@@ -18,7 +18,7 @@ boolean setupFinished = false;
 
 void setup() {
   size(1024, 768);
-  selectFolder("Select a project folder:", "folderSelected");
+  selectFolder("Select or create a project folder:", "folderSelected");
   frameRate(30);
   background(192);
   textSize(50);
@@ -31,16 +31,20 @@ void setup() {
 void setup_real() {
   cameraFrame = new CameraFrame();
   cameraFrame.openCamera(this);
-  sequence = new Sequence(90, projectFolder, cameraFrame);
-  sequence.loadImages();
-  sequenceViewer = new SequenceViewer(sequence);
-  sequence.setViewer(sequenceViewer);
+  openProject();
   controlPanel = new ControlPanel();
   ripple = new Ripple();
 
   setupFinished = true;
   background(192);
   loop();
+}
+
+void openProject() {
+  sequence = new Sequence(90, projectFolder, cameraFrame);
+  sequence.loadImages();
+  sequenceViewer = new SequenceViewer(sequence);
+  sequence.setViewer(sequenceViewer);
 }
 
 void draw() {
@@ -72,6 +76,14 @@ void folderSelected(File selection) {
   setup_real();
 }
 
+void folderSelected2(File selection) {
+  if (selection != null) {
+    projectFolder = selection.getAbsolutePath();
+    openProject();
+  }
+  controlPanel.unlockPanel();
+}
+
 void mouseClicked() {
   boolean ret;
   ret = controlPanel.mouseClicked();
@@ -98,4 +110,3 @@ void keyPressed() {
     }
   }
 }
-

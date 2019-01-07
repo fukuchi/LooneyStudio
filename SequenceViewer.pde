@@ -23,7 +23,11 @@ class SequenceViewer {
     translate(0, 388);
     stroke(0);
     fill(255);
-    rect(0, 0, width-1, 375);
+    rect(0, 0, width-1, 379);
+    fill(96);
+    textSize(14);
+    float w = textWidth(sequence.path);
+    text(sequence.path, (width - w) / 2,2);
 
     int i = 0;
 
@@ -59,11 +63,11 @@ class SequenceViewer {
   }
 
   int thumbnailPosX(int x) {
-    return x * 66 + 17;
+    return x * 66 + 20;
   }
 
   int thumbnailPosY(int y) {
-    return y * 60 + 12;
+    return y * 60 + 22;
   }
 
   void drawThumbFrame(int n, int ox, int oy) {
@@ -72,10 +76,10 @@ class SequenceViewer {
       fill(255, 0, 0);
       large = true;
     } else if (n == sequence.currentCameraPosition) {
-      fill(0, 255, 0);
+      fill(255, 192, 0);
       large = true;
     } else if (n == sequence.currentPlayerPosition) {
-      fill(0, 128, 255);
+      fill(0, 255, 0);
       large = true;
     } else {
       fill(0);
